@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var play = 1
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            LottieView(name: "facebook", play: $play)
+                .frame(width: 400, height: 400)
+            Button("Play"){
+                play += 1
+            }
+                .font(.largeTitle)
+        }
     }
 }
 
